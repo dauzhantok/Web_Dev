@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>Before the script...</p>
+
+<script>
+
+  alert( 'I’m JavaScript!' );
+
+  let admin, name; // can declare two variables at once
+
+  name = "John";
+
+  admin = name;
+
+  alert( admin );
+
+  let name = "Ilya";
+  // the expression is a number 1
+  alert( `hello ${1}` ); // hello 1
+  // the expression is a string "name"
+  alert( `hello ${"name"}` ); // hello name
+  // the expression is a variable, embed it
+  alert( `hello ${name}` ); // hello Ilya
+
+  let name = prompt("What is your name?", "");
+  alert(name);
+  let a = 2;
+  let x = 1 + (a *= 2);
+
+  let a = prompt("First number?", 1);
+  let b = prompt("Second number?", 2);
+  alert(+a + +b);
+  let message;
+
+  if (login == 'Employee') {
+      message = 'Hello';
+  } else if (login == 'Director') {
+      message = 'Greetings';
+  } else if (login == '') {
+      message = 'No login';
+  } else {
+      message = '';
+  }
+
+  for (let i = 0; i < 5; ++i) alert( i );
+  nextPrime:
+      for (let i = 2; i <= 10; i++) { // for each i...
+
+          for (let j = 2; j < i; j++) { // look for a divisor..
+              if (i % j == 0) continue nextPrime; // not a prime, go next i
+          }
+
+          alert( i ); // a prime
+      }
+
+  function showMessage() {
+      alert( 'Hello everyone!' );
+  }
+  function checkAge(age) {
+      if (age > 18) {
+          return true;
+      } else {
+          return confirm('Did parents allow you?');
+      }
+  }
+</script>
+
+<p>...After the script.</p>
+</body>
+</html>

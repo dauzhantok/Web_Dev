@@ -1,0 +1,68 @@
+<html lang="en">
+<body>
+<script>
+    let user = {     // an object
+        name: "John",  // by key "name" store value "John"
+        age: 30        // by key "age" store value 30
+    };
+    alert( user.name ); // John
+    alert( user.age );
+    user.isAdmin = true;
+
+    let john = {
+        name: "John",
+        sayHi: function() {
+            alert("Hi buddy!");
+        }
+    };
+    john.sayHi();
+
+    let fruits = ["Apples", "Pear", "Orange"];
+
+    // push a new value into the "copy"
+    let shoppingCart = fruits;
+    shoppingCart.push("Banana");
+
+    // what's in fruits?
+    alert( fruits.length ); // ?
+
+    let arr = ["I", "go", "home"];
+    delete arr[1]; // remove "go"
+    alert( arr[1] ); // undefined  // now arr = ["I",  , "home"];
+    alert( arr.length ); // 3
+
+    let arr = ["I", "study", "JavaScript"];
+    arr.splice(1, 1); // from index 1 remove 1 element
+    alert( arr ); // ["I", "JavaScript"]
+
+    function sumSalaries(salaries) {
+        let sum = 0;
+        for (let salary of Object.values(salaries)) {
+            sum += salary;
+        }
+        return sum; // 650
+    }
+    let salaries = {
+        "John": 100,
+        "Pete": 300,
+        "Mary": 250
+    };
+    alert( sumSalaries(salaries) );
+
+    let date = new Date("2017-01-26");
+    alert(date);
+
+    let start = new Date(); // start measuring time
+    for (let i = 0; i < 100000; i++) {
+        let doSomething = i * i * i;
+    }
+    let end = new Date(); // end measuring time
+    alert( `The loop took ${end - start} ms` );
+
+
+    let userData = '{ "name": "John", "age": 35, "isAdmin": false, "friends": [0,1,2,3] }';
+    let user = JSON.parse(userData);
+    alert( user.friends[1] ); // 1
+</script>
+</body>
+</html>
